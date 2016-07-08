@@ -1,0 +1,12 @@
+@import "node_modules/materialize-css/sass/materialize";
+
+.logo-nav {
+    height:100px;
+    line-height:100px;
+}
+
+.content {
+    @extend .z-depth-1;
+    background: #fff;
+    padding: 10px 30px;
+}

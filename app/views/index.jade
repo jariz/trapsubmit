@@ -1,0 +1,62 @@
+extends layout
+
+block content
+  if errors
+    .card-panel.red.white-text
+      for error in errors
+        p=error.msg
+    
+  if success
+    .card-panel.green.white-text
+      p 
+        | Your uploads & information have been stored!
+        br
+        | Keep an eye out on the subreddit to see if voting on your mix has begun.
+    p.center
+      img(src="https://images.rapgenius.com/f584427b0d2f7e1c676d197ebb4ead72.320x240x100.gif")
+  else
+    .card-panel.indigo.white-text
+      p 
+        | Make sure you read the 
+        a.grey-text.text-lighten-1(href="https://redd.it/4r89al") official thread
+        |  for the full guidelines you will have to adhere to.
+        br
+        | Also, be patient when uploading, it may take a while.
+    form(method="post", enctype="multipart/form-data")
+      .row
+        .input-field.col.s12
+          input.validate(name="username", id="username", required, type="text", value=body.username)
+          label(for="username") Reddit username *
+        .input-field.col.s12
+          input.validate(name="artistname", id="artistname", type="text", value=body.artistname)
+          label(for="artistname") Artist name (if any)
+        .input-field.col.s12
+          input.validate(name="url", id="url", type="url", value=body.url)
+          label(for="url") Soundcloud / Mixcloud
+        .col.s12
+          h5 7 minute teaser mix
+        .file-field.input-field.col.s12
+          .btn.grey.darken-4
+            span File *
+            input(type="file", accept="audio/mpeg" name="teasermix", required)
+          .file-path-wrapper
+            input(type="text").file-path.validate
+        .col.s12.input-field
+          textarea.materialize-textarea(id="tracklist_teasermix", name="tracklist_teasermix", value=body.tracklist_teasermix)
+          label(for="tracklist_teasermix") Tracklist (not required, but recommended)
+        .col.s12
+          h5 30 minute full mix
+        .file-field.input-field.col.s12
+          .btn.grey.darken-4
+            span File *
+            input(type="file", accept="audio/mpeg" name="fullmix", required)
+          .file-path-wrapper
+            input(type="text").file-path.validate
+        .col.s12.input-field
+          textarea.materialize-textarea(id="tracklist_fullmix", name="tracklist_fullmix", value=body.tracklist_fullmix)
+          label(for="tracklist_fullmix") Tracklist (not required, but recommended)
+        
+      .row.center
+        button(type="submit" name="action").btn.btn.teal.waves-effect.waves-light.col.s12
+          | Submit
+          i.material-icons.right send

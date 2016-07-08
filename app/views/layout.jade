@@ -1,0 +1,36 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width')
+    title /r/trap mix competition submission
+    meta(property="og:title" content="/r/Trap Half Year Mix Competition")
+    meta(property="og:url" content="https://submit.trapped.io/")
+    meta(property="og:site_name" content="/r/Trap Mix Competition")
+    meta(property="og:description" content="/r/Trap Half Year Mix Competition - Submit Page")
+    meta(property="og:type" content="website")
+    block css
+      link(rel='stylesheet', href='/css/style.css')
+      link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
+  body
+    nav.grey.darken-4.logo-nav
+      .container
+        .nav-wrapper
+          a.brand-logo(href="https://trap.reddit.com/", target="_blank")
+            img(src="img/logo.png")
+    nav.grey.darken-3
+      .container
+        .nav-wrapper
+          .col.s12
+            a(href="/").breadcrumb.hide-on-small-only Half Year Mix Competition
+            a(href="/").breadcrumb Submission Form
+
+    .container
+      .content
+        block content
+          
+    block js
+      script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js")
+      script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.js")
+      if ENV_DEVELOPMENT
+        script(src='http://localhost:35729/livereload.js')

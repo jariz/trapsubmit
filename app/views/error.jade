@@ -1,0 +1,7 @@
+extends layout
+
+block content
+  .card-panel.red.white-text
+    p=message
+  if ENV_DEVELOPMENT
+    pre #{error.stack}
