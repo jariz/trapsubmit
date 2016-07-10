@@ -5,13 +5,13 @@ var express = require('express'),
     multer = require('multer'),
     upload = multer({
         dest: 'uploads/',
-        fileFilter: function(req, file, cb) {
-            if(file.mimetype !== "audio/mp3") {
-                cb(new Error("Invalid file type, please choose a MP3 file."), false)
-            } else {
-                cb(null, true)
-            }
-        },
+        // fileFilter: function(req, file, cb) {
+        //     if(file.mimetype !== "audio/mp3") {
+        //         cb(new Error("Invalid file type, please choose a MP3 file."), false)
+        //     } else {
+        //         cb(null, true)
+        //     }
+        // },
         limits: {
             fileSize: 209715200 //200mb
         }
