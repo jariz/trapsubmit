@@ -6,19 +6,19 @@ var config = {
   development: {
     root: rootPath,
     app: {
-      name: 'trapsubmit'
+      name: 'trapsubmit2017'
     },
     port: 3333,
-    db: 'mongodb://localhost/trapsubmit-development'
+    db: 'mongodb://localhost/trapsubmit2017-development'
   },
 
   production: {
     root: rootPath,
     app: {
-      name: 'trapsubmit'
+      name: 'trapsubmit2017'
     },
     port: 3333,
-    db: 'mongodb://localhost/trapsubmit-production'
+    db: 'mongodb://localhost/trapsubmit2017-production'
   }
 };
 
